@@ -1,0 +1,145 @@
+{
+    "entries": [
+        {   "id":1,
+            "Professor": {
+                "name": "Madhur Behl",
+                "link": "https://engineering.virginia.edu/department/computer-science/research/artificial-intelligence-research"
+            },
+            "Research problem statement": {
+                "Problem_statement": "Developing algorithms for multi-robot navigation and human-robot interaction.",
+                "Description": "Research focuses on enabling robots to navigate in environments shared with humans, enhancing their interaction capabilities.",
+                "link": "https://engineering.virginia.edu/department/computer-science/research/artificial-intelligence-research"
+            },
+            "University": {
+                "name": "University of Virginia",
+                "city": "Charlottesville",
+                "country": "USA",
+                "cutoff": "",
+                "acceptance_ratio": ""
+            },
+            "seeking_students": {
+                "is_seeking": true,
+                "Seeking_description": "Looking for motivated students interested in robotics and AI research.",
+                "Seeking_stipend": "",
+                "links": [
+                    ""
+                ]
+            },
+            "research_progress": {
+                "status": "Ongoing",
+                "description": "Current projects include developing new algorithms for autonomous navigation and interaction in complex environments.",
+                "link": ""
+            },
+            "environment_information": [
+                {
+                    "Ideas_update": [
+                        {
+                            "description": "Recent advancements in reinforcement learning techniques for improved robot navigation.",
+                            "source": ""
+                        },
+                        {
+                            "description": "New methods for enhancing human-robot interaction through natural language processing.",
+                            "source": ""
+                        }
+                    ],
+                    "update_from_professor": "",
+                    "Update_from_university": ""
+                }
+            ]
+        },
+        {
+            "id":2,
+            "Professor": {
+                "name": "Emmanuel M\u00fcller",
+                "link": "https://ls9-www.cs.tu-dortmund.de"
+            },
+            "Research problem statement": {
+                "Problem_statement": "Scalable algorithms for data mining and machine learning.",
+                "Description": "Research includes developing algorithms that handle high-dimensional data and complex graphs, focusing on knowledge discovery.",
+                "link": ""
+            },
+            "University": {
+                "name": "Technical University of Dortmund",
+                "city": "Dortmund",
+                "country": "Germany",
+                "cutoff": "",
+                "acceptance_ratio": ""
+            },
+            "seeking_students": {
+                "is_seeking": true,
+                "Seeking_description": "",
+                "Seeking_stipend": "",
+                "links": [
+                    ""
+                ]
+            },
+            "research_progress": {
+                "status": "",
+                "description": "",
+                "link": ""
+            },
+            "environment_information": [
+                {
+                    "Ideas_update": [
+                        {
+                            "description": "Recent publication on scalable algorithms for big data analytics.",
+                            "source": ""
+                        },
+                        {
+                            "description": "Advancements in interactive exploration techniques for high-dimensional datasets.",
+                            "source": ""
+                        }
+                    ],
+                    "update_from_professor": "",
+                    "Update_from_university": ""
+                }
+            ]
+        },
+        {
+            "id":3,
+            "Professor": {
+                "name": "",
+                "link": ""
+            },
+            "Research problem statement": {
+                "Problem_statement": "",
+                "Description": "",
+                "link": ""
+            },
+            "University": {
+                "name": "",
+                "city": "",
+                "country": "",
+                "cutoff": "",
+                "acceptance_ratio": ""
+            },
+            "seeking_students": {
+                "is_seeking": false,
+                "Seeking_description": "",
+                "Seeking_stipend": "",
+                "links": []
+            },
+            "research_progress": {
+                "status": "",
+                "description": "",
+                "link": ""
+            },
+            "environment_information": [
+                {
+                    "Ideas_update": [
+                        {
+                            "description": "",
+                            "source": ""
+                        },
+                        {
+                            "description": "",
+                            "source": ""
+                        }
+                    ],
+                    "update_from_professor": "",
+                    "Update_from_university": ""
+                }
+            ]
+        }
+    ]
+}

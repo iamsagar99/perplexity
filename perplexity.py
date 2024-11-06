@@ -7,6 +7,9 @@ from json import loads, dumps
 from random import getrandbits
 from websocket import WebSocketApp
 from requests import Session, get, post
+from requests.exceptions import RequestException
+import os
+# import time
 
 class Perplexity:
     def __init__(self, email: str = None) -> None:
@@ -54,7 +57,7 @@ class Perplexity:
     def _login(self, email: str, ps: dict = None) -> None:
         self.session.post(url="https://www.perplexity.ai/api/auth/signin-email", data={"email": email})
 
-        email_link: str = str(input("https://www.perplexity.ai/api/auth/callback/email?callbackUrl=https%3A%2F%2Fwww.perplexity.ai%2Fapi%2Fauth%2Fsignin-callback%3Fredirect%3Dhttps%253A%252F%252Fwww.perplexity.ai%252F%253Flogin-source%253DloginButton%2523locale%253Den-US&token=r5l19-qmhsy&email=irontmp%2Bks8ra%40gmail.com"))
+        email_link: str = str(input("Enter signin link here:"))
         self.session.get(email_link)
 
         if ps:
@@ -257,6 +260,66 @@ class Perplexity:
 
         return file_url
     
+    # def upload(self, filename: str) -> str:
+    #     if not self.finished:
+    #         raise RuntimeError("Already searching or process not finished.")
+        
+    #     ext = os.path.splitext(filename)[-1].lower()
+    #     if ext not in [".txt", ".pdf"]:
+    #         raise ValueError("Invalid file format. Only .txt and .pdf are allowed.")
+
+    #     try:
+    #         if filename.startswith("http"):
+    #             file = get(filename).content
+    #         else:
+    #             with open(filename, "rb") as f:
+    #                 file = f.read()
+    #     except (RequestException, FileNotFoundError) as e:
+    #         raise RuntimeError(f"Failed to load the file: {str(e)}")
+
+    #     self._start_interaction()
+    #     ws_message: str = f"{self.base + self.n}" + dumps([
+    #         "get_upload_url",
+    #         {
+    #             "version": "2.1",
+    #             "source": "default",
+    #             "content_type": "text/plain" if ext == ".txt" else "application/pdf",
+    #         }
+    #     ])
+    #     self.ws.send(ws_message)
+
+    #     start_time = time.time()
+    #     while not self.finished or len(self.queue) != 0:
+    #         if len(self.queue) != 0:
+    #             upload_data = self.queue.pop(0)
+    #             break
+    #         if time.time() - start_time > 30:
+    #             raise TimeoutError("Upload process took too long.")
+
+    #     if upload_data.get("rate_limited"):
+    #         raise RuntimeError("Upload failed due to rate limiting.")
+
+    #     key_prefix = upload_data["fields"]["key"].split("$")[0]
+    #     post(
+    #         url=upload_data["url"],
+    #         files={
+    #             "acl": (None, upload_data["fields"]["acl"]),
+    #             "Content-Type": (None, upload_data["fields"]["Content-Type"]),
+    #             "key": (None, upload_data["fields"]["key"]),
+    #             "AWSAccessKeyId": (None, upload_data["fields"]["AWSAccessKeyId"]),
+    #             "x-amz-security-token": (None, upload_data["fields"]["x-amz-security-token"]),
+    #             "policy": (None, upload_data["fields"]["policy"]),
+    #             "signature": (None, upload_data["fields"]["signature"]),
+    #             "file": (filename, file, upload_data["fields"]["Content-Type"])
+    #         },
+    #         headers={"Content-Type": upload_data["fields"]["Content-Type"]}
+    #     )
+
+    #     file_url: str = f"{upload_data['url']}{key_prefix}{filename}"
+    #     self._write_file_url(filename, file_url)
+
+    #     return file_url
+
     def threads(self, query: str = None, limit: int = None) -> list[dict]:
         assert self.email, "not logged in"
         assert self.finished, "already searching"
